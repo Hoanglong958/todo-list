@@ -20,7 +20,6 @@ const store = configureStore({
   },
 });
 
-// Lưu todos vào localStorage mỗi khi thay đổi
 store.subscribe(() => {
   const state = store.getState();
   localStorage.setItem("todos", JSON.stringify(state.todos));

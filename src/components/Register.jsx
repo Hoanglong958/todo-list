@@ -7,7 +7,7 @@ export default function Register({ onRegister, onSwitchToLogin }) {
   const [error, setError] = useState("");
 
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/;
-  // Mật khẩu tối thiểu 6 ký tự, có chữ và số
+
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
   const handleSubmit = (e) => {
@@ -28,7 +28,7 @@ export default function Register({ onRegister, onSwitchToLogin }) {
       setError("Mật khẩu xác nhận không khớp!");
       return;
     }
-    // Lưu user vào localStorage (demo, không bảo mật)
+    
     localStorage.setItem("user", JSON.stringify({ email, password }));
     setError("");
     onRegister();

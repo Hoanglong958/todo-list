@@ -12,13 +12,13 @@ const todosSlice = createSlice({
         id: Date.now(),
         title: action.payload.title,
         content: action.payload.content || "",
-        status: false, // false = chưa hoàn thành, true = hoàn thành
+        status: false, 
         createdAt: now,
         updatedAt: now,
       });
     },
     updateTodo: (state, action) => {
-      // action.payload: { id, title, content }
+      
       const todo = state.find((t) => t.id === action.payload.id);
       if (todo) {
         todo.title = action.payload.title;
@@ -37,7 +37,7 @@ const todosSlice = createSlice({
       return state.filter((t) => t.id !== action.payload);
     },
     setTodos: (state, action) => {
-      // action.payload: array of todos (dùng cho localStorage)
+      
       return action.payload;
     },
   },
